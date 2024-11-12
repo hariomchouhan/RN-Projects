@@ -10,6 +10,7 @@ const InputBox = ({
     secureTextEntry,
     keyboardType,
     maxLength,
+    errors
 }) => {
     return (
         <View style={styles.mainContainer}>
@@ -24,6 +25,7 @@ const InputBox = ({
                 keyboardType={keyboardType}
                 maxLength={maxLength}
             />
+            {errors && touched && <Text style={{color: 'red', paddingLeft: 5}}>{errors}</Text>}
         </View>
     )
 }
@@ -32,7 +34,7 @@ export default InputBox
 
 const styles = StyleSheet.create({
     mainContainer: {
-        height: 68,
+        height: 78,
     },
     textInput: {
         borderWidth: 1,
