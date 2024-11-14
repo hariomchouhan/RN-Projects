@@ -4,16 +4,21 @@ import { Formik } from 'formik'
 import { SignupInitialValue, SignupValidationSchema } from './utils'
 import InputBox from '../../components/InputBox'
 import CustomButton from '../../components/CustomButton'
+import { useNavigation } from '@react-navigation/native'
 
 const Signup = () => {
+    const navigation = useNavigation();
+
     const handleSignup = (values) => {
         console.log(values);
 
     }
     return (
-        <View style={{ flex: 1, alignItems: 'center' }}>
-            <View style={{ flex: 0.8, justifyContent: 'center' }}>
-                <Text style={{fontSize: 22, fontWeight: '700', marginBottom: 20}}>Signup with your mobile number</Text>
+        <View style={{ flex: 1, paddingHorizontal: 15, marginTop: 20, backgroundColor: 'white' }}>
+            <View style={{ flex: 0.3 }}>
+                <Text style={{ fontSize: 25, fontWeight: '700', marginBottom: 20 }}>
+                    What's your mobile number
+                </Text>
                 <Formik
                     initialValues={SignupInitialValue}
                     validationSchema={SignupValidationSchema}
@@ -39,19 +44,22 @@ const Signup = () => {
                                     maxLength={10}
                                     keyboardType='numeric'
                                 />
-                                <CustomButton 
-                                buttonTitle={"Sign up"} 
-                                onPress={handleSubmit}
-                                disabled={!isValid}
+                                <CustomButton
+                                    buttonTitle={"Sign up"}
+                                    onPress={handleSubmit}
+                                    disabled={!isValid}
                                 />
                             </View>
                         )
                     }}
                 </Formik>
+                <TouchableOpacity style={{ marginTop: 15 }}>
+                    <Text style={{ fontSize: 16, textAlign: 'center' }}>Sign up with email</Text>
+                </TouchableOpacity>
             </View>
-            <View style={{ flex: 0.2, marginBottom: 20, justifyContent: 'flex-end' }}>
-                <TouchableOpacity>
-                    <Text>Login</Text>
+            <View style={{ justifyContent: 'flex-end', flex: 0.7, marginBottom: 20 }}>
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <Text style={{ fontSize: 16, textAlign: 'center' }}>Login</Text>
                 </TouchableOpacity>
             </View>
         </View>

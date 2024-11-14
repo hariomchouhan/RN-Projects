@@ -4,14 +4,17 @@ import { Formik } from 'formik'
 import { loginInitialValue, loginValidationSchema } from './utils'
 import InputBox from '../../components/InputBox'
 import CustomButton from '../../components/CustomButton'
+import { useNavigation } from '@react-navigation/native'
 
 const Login = () => {
+    const navigation = useNavigation();
+
     const handleLogin = (values) => {
         console.log(values);
     }
     return (
         <View style={{ flex: 1, alignItems: 'center' }}>
-            <View style={{ flex: 0.8, justifyContent: 'center' }}>
+             <View style={{flex: 1, justifyContent: 'center'}}>
                 <Image style={{ alignSelf: 'center', marginBottom: 20 }} source={require('../../assets/Instagram.png')} />
                 <Formik
                     initialValues={loginInitialValue}
@@ -45,19 +48,24 @@ const Login = () => {
                                     errors={errors.password}
                                     secureTextEntry={true}
                                 />
-                                <CustomButton 
-                                buttonTitle={"Login"} 
-                                onPress={handleSubmit}
-                                disabled={!isValid}
+                                <CustomButton
+                                    buttonTitle={"Login"}
+                                    onPress={handleSubmit}
+                                    disabled={!isValid}
                                 />
                             </View>
                         )
                     }}
                 </Formik>
+                <TouchableOpacity style={{ marginTop: 20, alignSelf: 'center' }}>
+                    <Text style={{ fontSize: 16 }}>Forgotten Password?</Text>
+                </TouchableOpacity>
             </View>
-            <View style={{ flex: 0.2, marginBottom: 20, justifyContent: 'flex-end' }}>
-                <TouchableOpacity>
-                    <Text>Sign up</Text>
+            <View style={{ justifyContent: 'flex-end' }}>
+                <TouchableOpacity
+                    style={{ marginBottom: 20, alignSelf: 'center' }}
+                    onPress={() => navigation.navigate('Signup')}>
+                    <Text style={{ fontSize: 16 }}>Create new account</Text>
                 </TouchableOpacity>
             </View>
         </View>
