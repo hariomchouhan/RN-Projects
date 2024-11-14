@@ -11,7 +11,7 @@ const Login = () => {
 
     const handleLogin = (values) => {
         console.log(values);
-        navigation.navigate('Home')
+        navigation.navigate('Dashboard')
     }
     return (
         <View style={{ flex: 1, alignItems: 'center' }}>
