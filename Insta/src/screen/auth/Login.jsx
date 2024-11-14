@@ -11,6 +11,7 @@ const Login = () => {
 
     const handleLogin = (values) => {
         console.log(values);
+        navigation.navigate('Home')
     }
     return (
         <View style={{ flex: 1, alignItems: 'center' }}>
