@@ -40,7 +40,7 @@ const BottomNavigation = () => {
                         style={{ width: 24, height: 24 }}
                         source={
                             focused ?
-                                require('../assets/footer/addPost.png')
+                                require('../assets/footer/sAddPost.png')
                                 : require('../assets/footer/addPost.png')}
                     />
                 )
@@ -51,7 +51,7 @@ const BottomNavigation = () => {
                         style={{ width: 24, height: 24 }}
                         source={
                             focused ?
-                                require('../assets/footer/reel.png')
+                                require('../assets/footer/sReel.png')
                                 : require('../assets/footer/reel.png')}
                     />
                 )
@@ -62,7 +62,7 @@ const BottomNavigation = () => {
                         style={{ width: 24, height: 24 }}
                         source={
                             focused ?
-                                require('../assets/footer/user.png')
+                                require('../assets/footer/sUser.png')
                                 : require('../assets/footer/user.png')}
                     />
                 )
