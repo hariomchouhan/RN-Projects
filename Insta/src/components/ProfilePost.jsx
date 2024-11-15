@@ -3,12 +3,20 @@ import React from 'react'
 
 const ProfilePost = () => {
   return (
-    <View>
-      <Text>ProfilePost</Text>
+    <View style={styles.mainContainer}>
+        <View style={styles.wrapper}></View>
     </View>
   )
 }
 
-export default ProfilePost
+const styles = StyleSheet.create({
+    mainContainer: {
+        marginTop: 20,
+    },
+    wrapper: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    }
+})
 
-const styles = StyleSheet.create({})
+export default ProfilePost
