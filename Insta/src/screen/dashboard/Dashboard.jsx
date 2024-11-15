@@ -1,14 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Header from '../../components/Header'
 import Stories from '../../components/Stories'
+import Post from '../../components/Post'
 
 const Dashboard = () => {
   return (
-    <View style={styles.mainContainer}>
+    <ScrollView style={styles.mainContainer}>
       <Header />
       <Stories />
-    </View>
+      <Post />
+    </ScrollView>
   )
 }
 
