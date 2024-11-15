@@ -7,7 +7,7 @@ const ProfileHeader = () => {
             <View style={styles.container}>
                 <Text style={styles.usernameText}>hariom_chouhan</Text>
                 <View style={styles.contentContainer}>
-                    <TouchableOpacity style={{marginRight: 15}}>
+                    <TouchableOpacity style={{marginRight: 25}}>
                         <Image source={require('../assets/footer/addPost.png')} style={{ height: 24, width: 24}} />
                     </TouchableOpacity>
                     <TouchableOpacity>

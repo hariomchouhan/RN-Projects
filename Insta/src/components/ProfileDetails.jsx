@@ -1,13 +1,14 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
+import { UserData } from '../utils/UserData'
 
 const ProfileDetails = () => {
     return (
         <View style={styles.mainContainer}>
             <View style={styles.imageContainer}>
-                <Image source={require('../assets/CodeBuilder.jpeg')} style={styles.profileImage} />
+                <Image source={require('../assets/Hariom.png')} style={styles.profileImage} />
                 <View style={styles.accountNumberCountContainer}>
-                    <Text style={styles.numberText}>4</Text>
+                    <Text style={styles.numberText}>{UserData.length}</Text>
                     <Text style={styles.numberTextLabel}>Posts</Text>
                 </View>
                 <View style={styles.accountNumberCountContainer}>
@@ -30,6 +31,9 @@ const ProfileDetails = () => {
                 <TouchableOpacity>
                     <Text style={styles.btnText}>Share Profile</Text>
                 </TouchableOpacity>
+                <TouchableOpacity style= {{padding: 2, borderRadius: 5, backgroundColor: '#E1E1E1', flex: 0.5, alignItems: 'center', justifyContent: 'center'}}>
+                    <Image style={{color: 'black', height: 18, width: 18, }} source={require('../assets/icon/addPeople.png')} />
+                </TouchableOpacity>
             </View>
         </View>
     )
@@ -47,7 +51,7 @@ const styles = StyleSheet.create({
     profileImage: {
         height: 80,
         width: 80,
-        borderRadius: 4,
+        borderRadius: 50,
     },
     accountNumberCountContainer: {
         width: 75,
